@@ -182,18 +182,40 @@
     android:layout_width="match_parent"
     xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <TextView
-        android:id="@+id/textViewData"
-        android:layout_width="wrap_content"
+<!--    <TextView-->
+<!--        android:id="@+id/textViewData"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:textSize="50sp"-->
+<!--        android:layout_centerHorizontal="true"-->
+<!--        android:text="TextView" />-->
+
+<!--    <Button-->
+<!--        android:id="@+id/buttonChangeText"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_centerInParent="true"-->
+<!--        android:text="Change Text" />-->
+
+
+    <EditText
+        android:id="@+id/editTextTextPersonName"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textSize="50sp"
-        android:layout_centerHorizontal="true"
-        android:text="TextView" />
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="30dp"
+        android:ems="10"
+        android:hint="Name"
+        android:inputType="textPersonName" />
 
     <Button
-        android:id="@+id/buttonChangeText"
+        android:id="@+id/buttonGetPersonName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
-        android:text="Change Text" />
+        android:text="Button" />
 </RelativeLayout>
