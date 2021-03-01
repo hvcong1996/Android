@@ -10,13 +10,18 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
+import java.util.List;
+import java.util.Random;
 
 public class MainActivity extends AppCompatActivity {
 
 //    TextView txtContent;
 //    Button btnChangeText;
-    EditText edtUserName;
-    Button btnGetUserName;
+//    EditText edtUserName;
+//    Button btnGetUserName;
+    EditText edtMinNumber, edtMaxNumber;
+    TextView txtRandomNumber;
+    Button btnExecuteRandom;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,15 +38,44 @@ public class MainActivity extends AppCompatActivity {
 //            }
 //        });
 
-        edtUserName = (EditText) findViewById(R.id.editTextTextPersonName);
-        btnGetUserName = (Button) findViewById(R.id.buttonGetPersonName);
+//        edtUserName = (EditText) findViewById(R.id.editTextPersonName);
+//        btnGetUserName = (Button) findViewById(R.id.buttonGetPersonName);
+//
+//        btnGetUserName.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                String content = edtUserName.getText().toString();
+//                Toast.makeText(MainActivity.this, content, Toast.LENGTH_LONG).show();
+//            }
+//        });
 
-        btnGetUserName.setOnClickListener(new View.OnClickListener() {
+        MappingUI();
+
+        btnExecuteRandom.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String content = edtUserName.getText().toString();
-                Toast.makeText(MainActivity.this, content, Toast.LENGTH_LONG).show();
+                String stringMinValue = edtMinNumber.getText().toString();
+                String stringMaxValue = edtMaxNumber.getText().toString();
+
+                // If value input is string then trim() value input and check.
+                if(stringMinValue.length() == 0 || stringMaxValue.length() == 0){
+                    Toast.makeText(MainActivity.this, "Please input info", Toast.LENGTH_LONG).show();
+                    return;
+                }
+
+                int intMinValue = Integer.parseInt(stringMinValue);
+                int intMaxValue = Integer.parseInt(stringMaxValue);
+                Random random = new Random();
+                int number = random.nextInt(intMaxValue - intMinValue + 1) + intMinValue;
+                txtRandomNumber.setText(String.valueOf(number));
             }
         });
+    }
+
+    public void MappingUI(){
+        edtMinNumber = (EditText) findViewById(R.id.editTextMinNumber);
+        edtMaxNumber = (EditText) findViewById(R.id.editTextMaxNumber);
+        txtRandomNumber = (TextView) findViewById(R.id.textViewNumber);
+        btnExecuteRandom = (Button) findViewById(R.id.buttonRandomNumber);
     }
 }
