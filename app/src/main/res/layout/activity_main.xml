@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--<LinearLayout-->
+<!--    android:weightSum="10"-->
+<!--    android:orientation="vertical"-->
+<!--    android:layout_height="match_parent"-->
+<!--    android:layout_width="match_parent"-->
+<!--    xmlns:android="http://schemas.android.com/apk/res/android">-->
+
+<!--    <LinearLayout-->
+<!--        android:orientation="vertical"-->
+<!--        android:layout_weight="3"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="0dp">-->
+<!--        <TextView-->
+<!--            android:id="@+id/textView1"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="0dp"-->
+<!--            android:layout_weight="1"-->
+<!--            android:background="#9A1D1D"-->
+<!--            android:textSize="50sp"-->
+<!--            android:gravity="center"-->
+<!--            android:text="1" />-->
+<!--    </LinearLayout>-->
+
+<!--    <LinearLayout-->
+<!--        android:orientation="horizontal"-->
+<!--        android:weightSum="10"-->
+<!--        android:layout_weight="7"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="0dp">-->
+<!--        <LinearLayout-->
+<!--            android:orientation="horizontal"-->
+<!--            android:layout_weight="3"-->
+<!--            android:layout_width="0dp"-->
+<!--            android:layout_height="match_parent">-->
+<!--            <TextView-->
+<!--                android:id="@+id/textView2"-->
+<!--                android:layout_width="0dp"-->
+<!--                android:layout_height="match_parent"-->
+<!--                android:layout_weight="1"-->
+<!--                android:background="#FFEB3B"-->
+<!--                android:textSize="50sp"-->
+<!--                android:gravity="center"-->
+<!--                android:text="2" />-->
+<!--        </LinearLayout>-->
+<!--        <LinearLayout-->
+<!--            android:orientation="vertical"-->
+<!--            android:layout_weight="7"-->
+<!--            android:weightSum="10"-->
+<!--            android:layout_width="0dp"-->
+<!--            android:layout_height="match_parent">-->
+<!--            <LinearLayout-->
+<!--                android:orientation="horizontal"-->
+<!--                android:layout_weight="7"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="0dp">-->
+<!--                <TextView-->
+<!--                    android:id="@+id/textView3"-->
+<!--                    android:layout_width="0dp"-->
+<!--                    android:layout_height="match_parent"-->
+<!--                    android:layout_weight="1"-->
+<!--                    android:background="#03A9F4"-->
+<!--                    android:textSize="50sp"-->
+<!--                    android:gravity="center"-->
+<!--                    android:text="4" />-->
+<!--            </LinearLayout>-->
+<!--            <LinearLayout-->
+<!--                android:orientation="horizontal"-->
+<!--                android:layout_weight="3"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="0dp">-->
+<!--                <TextView-->
+<!--                    android:id="@+id/textView4"-->
+<!--                    android:layout_width="0dp"-->
+<!--                    android:layout_height="match_parent"-->
+<!--                    android:layout_weight="1"-->
+<!--                    android:background="#9C27B0"-->
+<!--                    android:textSize="50sp"-->
+<!--                    android:gravity="center"-->
+<!--                    android:text="4" />-->
+<!--                <TextView-->
+<!--                    android:id="@+id/textView5"-->
+<!--                    android:layout_width="0dp"-->
+<!--                    android:layout_height="match_parent"-->
+<!--                    android:layout_weight="1"-->
+<!--                    android:background="#673AB7"-->
+<!--                    android:textSize="50sp"-->
+<!--                    android:gravity="center"-->
+<!--                    android:text="5" />-->
+<!--            </LinearLayout>-->
+<!--        </LinearLayout>-->
+<!--    </LinearLayout>-->
+
+<!--</LinearLayout>-->
+<!--<RelativeLayout-->
+<!--    android:layout_height="match_parent"-->
+<!--    android:layout_width="match_parent"-->
+<!--    xmlns:android="http://schemas.android.com/apk/res/android">-->
+
+<!--    <TextView-->
+<!--        android:id="@+id/textView6"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_alignParentLeft="true"-->
+<!--        android:layout_alignParentTop="true"-->
+<!--        android:layout_marginLeft="50dp"-->
+<!--        android:layout_marginTop="100dp"-->
+<!--        android:textSize="50sp"-->
+<!--        android:text="1"/>-->
+
+<!--    <TextView-->
+<!--        android:id="@+id/textView7"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_alignLeft="@+id/textView6"-->
+<!--        android:layout_alignParentTop="true"-->
+<!--        android:layout_marginLeft="50dp"-->
+<!--        android:layout_marginTop="100dp"-->
+<!--        android:textSize="50sp"-->
+<!--        android:text="2"/>-->
+
+<!--</RelativeLayout>-->
+
+<!--<FrameLayout android:layout_height="match_parent"-->
+<!--    android:layout_width="match_parent"-->
+<!--    xmlns:android="http://schemas.android.com/apk/res/android">-->
+
+<!--    <TextView-->
+<!--        android:id="@+id/textView7"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:width="500dp"-->
+<!--        android:height="500dp"-->
+<!--        android:background="#3F51B5"-->
+<!--        android:textSize="50sp"-->
+<!--        android:text="1" />-->
+
+<!--    <TextView-->
+<!--        android:id="@+id/textView8"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:width="300dp"-->
+<!--        android:height="300dp"-->
+<!--        android:background="#2196F3"-->
+<!--        android:textSize="50sp"-->
+<!--        android:text="2" />-->
+
+<!--    <TextView-->
+<!--        android:id="@+id/textView9"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:width="200dp"-->
+<!--        android:height="200dp"-->
+<!--        android:background="#FF5722"-->
+<!--        android:textSize="50sp"-->
+<!--        android:text="3" />-->
+<!--</FrameLayout>-->
+
+<!--<TableLayout-->
+<!--    android:stretchColumns="*"-->
+<!--    android:layout_height="match_parent"-->
+<!--    android:layout_width="match_parent"-->
+<!--    xmlns:android="http://schemas.android.com/apk/res/android">-->
+<!--    <TableRow>-->
+<!--        <TextView android:text="Data 1" android:background="#F44336" android:layout_span="3" android:gravity="center"/>-->
+<!--    </TableRow>-->
+
+<!--    <TableRow>-->
+<!--        <TextView android:text="Data 1" android:background="#673AB7"/>-->
+<!--        <TextView android:text="Data 2" android:background="#3F51B5"/>-->
+<!--        <TextView android:text="Data 3" android:background="#2196F3"/>-->
+<!--    </TableRow>-->
+
+<!--    <TableRow>-->
+<!--        <TextView android:text="Data 1" android:background="#FF9800"/>-->
+<!--        <TextView android:text="Data 2" android:background="#4CAF50"/>-->
+<!--    </TableRow>-->
+<!--</TableLayout>-->
+
+<RelativeLayout
+    android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <TextView
+        android:id="@+id/textViewData"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="50sp"
+        android:layout_centerHorizontal="true"
+        android:text="TextView" />
+
+    <Button
+        android:id="@+id/buttonChangeText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:text="Change Text" />
+</RelativeLayout>
