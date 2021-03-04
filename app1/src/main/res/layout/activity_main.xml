@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <TextView
+        android:id="@+id/textView"
+        android:textSize="50sp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#FF0000"
+        android:text="100"
+        android:layout_centerHorizontal="true"/>
+
+    <CheckBox
+        android:id="@+id/checkBoxBird"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="100dp" />
+
+    <CheckBox
+        android:id="@+id/checkBoxDragon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/checkBoxBird" />
+
+    <CheckBox
+        android:id="@+id/checkBoxFish"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/checkBoxDragon" />
+
+    <CheckBox
+        android:id="@+id/checkBoxElephant"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/checkBoxFish" />
+
+    <SeekBar
+        android:id="@+id/seekBarBird"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="100dp"
+        android:thumb="@drawable/albatross_animal"
+        android:layout_toRightOf="@+id/checkBoxBird"/>
+
+    <SeekBar
+        android:id="@+id/seekBarDragon"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/seekBarBird"
+        android:thumb="@drawable/dragon_animal"
+        android:layout_marginTop="3dp"
+        android:layout_toRightOf="@+id/checkBoxDragon"/>
+
+    <SeekBar
+        android:id="@+id/seekBarFish"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/seekBarDragon"
+        android:thumb="@drawable/fish_animal"
+        android:layout_marginTop="2dp"
+        android:layout_toRightOf="@+id/checkBoxFish"/>
+
+    <SeekBar
+        android:id="@+id/seekBarElephant"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/seekBarFish"
+        android:thumb="@drawable/elephant_animal"
+        android:layout_marginTop="2dp"
+        android:layout_toRightOf="@+id/checkBoxElephant"/>
+
+    <Button
+        android:id="@+id/buttonStart"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Start"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="280dp"
+        android:layout_centerHorizontal="true"/>
+</RelativeLayout>
