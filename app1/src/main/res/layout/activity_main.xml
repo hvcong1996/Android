@@ -5,12 +5,11 @@
     xmlns:android="http://schemas.android.com/apk/res/android">
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/textViewResult"
         android:textSize="50sp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textColor="#FF0000"
-        android:text="100"
         android:layout_centerHorizontal="true"/>
 
     <CheckBox
@@ -39,6 +38,7 @@
         android:layout_below="@+id/checkBoxFish" />
 
     <SeekBar
+        android:progressDrawable="@android:color/transparent"
         android:id="@+id/seekBarBird"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -47,7 +47,20 @@
         android:thumb="@drawable/albatross_animal"
         android:layout_toRightOf="@+id/checkBoxBird"/>
 
+    <TextView
+        android:id="@+id/textViewBirdResult"
+        android:textSize="30sp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#FF0000"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="100dp"
+        android:layout_toRightOf="@+id/seekBarBird"
+        android:text="0"
+        android:layout_centerHorizontal="true"/>
+
     <SeekBar
+        android:progressDrawable="@android:color/transparent"
         android:id="@+id/seekBarDragon"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -57,6 +70,7 @@
         android:layout_toRightOf="@+id/checkBoxDragon"/>
 
     <SeekBar
+        android:progressDrawable="@android:color/transparent"
         android:id="@+id/seekBarFish"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -66,6 +80,7 @@
         android:layout_toRightOf="@+id/checkBoxFish"/>
 
     <SeekBar
+        android:progressDrawable="@android:color/transparent"
         android:id="@+id/seekBarElephant"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
