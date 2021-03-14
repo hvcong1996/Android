@@ -6,6 +6,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.Toast;
 
@@ -15,12 +17,22 @@ public class MainActivity extends AppCompatActivity {
 
     ListView lvMonHoc;
     ArrayList<String> arrayCourse;
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+    EditText edtInputItem;
+    Button btnAddItem;
+    Button btnUpdateData;
+    // Data adapter
+    ArrayAdapter adapter;
 
+    int index = -1;
+
+    public void MappingUI(){
         lvMonHoc = (ListView) findViewById(R.id.ListViewMonHoc);
+        edtInputItem = (EditText) findViewById(R.id.editTextInputItem);
+        btnAddItem = (Button) findViewById(R.id.buttonAddItem);
+        btnUpdateData = (Button) findViewById(R.id.buttonUpdateData);
+    }
+
+    public void  InitializeArray(){
         arrayCourse = new ArrayList<>();
         arrayCourse.add("Android 1");
         arrayCourse.add("Android 2");
@@ -32,20 +44,12 @@ public class MainActivity extends AppCompatActivity {
         arrayCourse.add("Android 8");
         arrayCourse.add("Android 9");
         arrayCourse.add("Android 10");
-        arrayCourse.add("Android 11");
-        arrayCourse.add("Android 12");
-        arrayCourse.add("Android 13");
-        arrayCourse.add("Android 14");
-        arrayCourse.add("Android 15");
-        arrayCourse.add("Android 16");
-        arrayCourse.add("Android 17");
-        arrayCourse.add("Android 18");
-        arrayCourse.add("Android 19");
-        arrayCourse.add("Android 20");
+    }
 
+    public void LoadDataToUI(){
         // Sử dụng để lấy data và đổ lên UI
         //(Màn hình hiển thị, layout hiển thị 1 item, object data)
-        ArrayAdapter adapter = new ArrayAdapter(
+        adapter = new ArrayAdapter(
                 MainActivity.this,
                 android.R.layout.simple_list_item_1,
                 arrayCourse
@@ -53,21 +57,61 @@ public class MainActivity extends AppCompatActivity {
 
         // Set data cho View
         lvMonHoc.setAdapter(adapter);
+    }
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+
+        MappingUI();
+
+        InitializeArray();
+
+        LoadDataToUI();
 
         // Click event
         lvMonHoc.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 // position: Vị trí của item click
-                Toast.makeText(MainActivity.this,arrayCourse.get(position), Toast.LENGTH_SHORT).show();
+                index = position;
+                edtInputItem.setText(arrayCourse.get(position));
             }
         });
 
-        // Long click event
         lvMonHoc.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
             @Override
             public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id) {
+                // Get from UI and add to add
+                arrayCourse.remove(position);
+
+                // Update data when changed to UI
+                adapter.notifyDataSetChanged();
                 return false;
+            }
+        });
+
+        btnAddItem.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Get from UI and add to add
+                String item = edtInputItem.getText().toString();
+                arrayCourse.add(item);
+
+                // Update data when changed to UI
+                adapter.notifyDataSetChanged();
+            }
+        });
+
+        btnUpdateData.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Get from UI and add to add
+                arrayCourse.set(index, edtInputItem.getText().toString());
+
+                // Update data when changed to UI
+                adapter.notifyDataSetChanged();
             }
         });
     }
