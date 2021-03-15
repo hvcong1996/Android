@@ -33,10 +33,9 @@ public class FruitApdapter extends BaseAdapter {
     // Return 1 record in Data
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
-        // Xác định lấy context nào
+        // Xác định context nào để Nạp Layout
         LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-
-        // Gắn data vào View(data của 1 record)
+        // Nạp layout
         convertView = inflater.inflate(layout, null);
 
         // Mapping data to UI
@@ -44,9 +43,10 @@ public class FruitApdapter extends BaseAdapter {
         TextView txtFruitDescription = (TextView) convertView.findViewById(R.id.textView_FruitDescription);
         ImageView imgFruitImage = (ImageView) convertView.findViewById(R.id.imageView_FruitImage);
 
-        // Set data
+        // Get data item
         Fruit fruit = fruits.get(position);
 
+        // Set data item
         txtFruitName.setText(fruit.getName());
         txtFruitDescription.setText(fruit.getDescription());
         imgFruitImage.setImageResource(fruit.getImage());
