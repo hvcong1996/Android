@@ -15,48 +15,43 @@ import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
 
-    ListView lvMonHoc;
-    ArrayList<String> arrayCourse;
+    ListView lvFruit;
+    ArrayList<Fruit> arrayFruit;
+    FruitApdapter adapterFruit;
+
     EditText edtInputItem;
     Button btnAddItem;
     Button btnUpdateData;
-    // Data adapter
-    ArrayAdapter adapter;
 
     int index = -1;
 
     public void MappingUI(){
-        lvMonHoc = (ListView) findViewById(R.id.ListViewMonHoc);
+        lvFruit = (ListView) findViewById(R.id.ListViewFruit);
+
         edtInputItem = (EditText) findViewById(R.id.editTextInputItem);
         btnAddItem = (Button) findViewById(R.id.buttonAddItem);
         btnUpdateData = (Button) findViewById(R.id.buttonUpdateData);
     }
 
     public void  InitializeArray(){
-        arrayCourse = new ArrayList<>();
-        arrayCourse.add("Android 1");
-        arrayCourse.add("Android 2");
-        arrayCourse.add("Android 3");
-        arrayCourse.add("Android 4");
-        arrayCourse.add("Android 5");
-        arrayCourse.add("Android 6");
-        arrayCourse.add("Android 7");
-        arrayCourse.add("Android 8");
-        arrayCourse.add("Android 9");
-        arrayCourse.add("Android 10");
+        arrayFruit = new ArrayList<>();
+
+        arrayFruit.add(new Fruit("Banana", "Banana (Description)", R.drawable.banana_fruit));
+        arrayFruit.add(new Fruit("Beet", "Beet (Description)", R.drawable.beet_fruit));
+        arrayFruit.add(new Fruit("Citrus", "Citrus (Description)", R.drawable.citrus_fruit));
+        arrayFruit.add(new Fruit("Kiwi", "Kiwi (Description)", R.drawable.kiwi_fruit));
+        arrayFruit.add(new Fruit("Peach", "Peach (Description)", R.drawable.peach_fruit));
+        arrayFruit.add(new Fruit("Raspberry", "Raspberry (Description)", R.drawable.raspberry_fruit));
+        arrayFruit.add(new Fruit("Watermelon", "Watermelon (Description)", R.drawable.watermelon_fruit));
     }
 
     public void LoadDataToUI(){
         // Sử dụng để lấy data và đổ lên UI
         //(Màn hình hiển thị, layout hiển thị 1 item, object data)
-        adapter = new ArrayAdapter(
-                MainActivity.this,
-                android.R.layout.simple_list_item_1,
-                arrayCourse
-        );
+        adapterFruit = new FruitApdapter(MainActivity.this, R.layout.fruit_record, arrayFruit);
 
         // Set data cho View
-        lvMonHoc.setAdapter(adapter);
+        lvFruit.setAdapter(adapterFruit);
     }
 
     @Override
@@ -71,47 +66,47 @@ public class MainActivity extends AppCompatActivity {
         LoadDataToUI();
 
         // Click event
-        lvMonHoc.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                // position: Vị trí của item click
-                index = position;
-                edtInputItem.setText(arrayCourse.get(position));
-            }
-        });
+//        lvMonHoc.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+//            @Override
+//            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+//                // position: Vị trí của item click
+//                index = position;
+//                edtInputItem.setText(arrayCourse.get(position));
+//            }
+//        });
 
-        lvMonHoc.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
-            @Override
-            public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id) {
-                // Get from UI and add to add
-                arrayCourse.remove(position);
-
-                // Update data when changed to UI
-                adapter.notifyDataSetChanged();
-                return false;
-            }
-        });
+//        lvMonHoc.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
+//            @Override
+//            public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id) {
+//                // Get from UI and add to add
+//                arrayCourse.remove(position);
+//
+//                // Update data when changed to UI
+//                adapter.notifyDataSetChanged();
+//                return false;
+//            }
+//        });
 
         btnAddItem.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 // Get from UI and add to add
-                String item = edtInputItem.getText().toString();
-                arrayCourse.add(item);
-
-                // Update data when changed to UI
-                adapter.notifyDataSetChanged();
+//                String item = edtInputItem.getText().toString();
+//                arrayCourse.add(item);
+//
+//                // Update data when changed to UI
+//                adapter.notifyDataSetChanged();
             }
         });
 
         btnUpdateData.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // Get from UI and add to add
-                arrayCourse.set(index, edtInputItem.getText().toString());
-
-                // Update data when changed to UI
-                adapter.notifyDataSetChanged();
+//                // Get from UI and add to add
+//                arrayCourse.set(index, edtInputItem.getText().toString());
+//
+//                // Update data when changed to UI
+//                adapter.notifyDataSetChanged();
             }
         });
     }

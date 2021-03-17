@@ -30,7 +30,7 @@
         app:layout_constraintTop_toBottomOf="@+id/editTextInputItem" />
 
     <ListView
-        android:id="@+id/ListViewMonHoc"
+        android:id="@+id/ListViewFruit"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginTop="316dp"

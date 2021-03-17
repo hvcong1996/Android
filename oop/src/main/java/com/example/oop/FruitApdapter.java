@@ -30,26 +30,50 @@ public class FruitApdapter extends BaseAdapter {
         return 0;
     }
 
+    // Object holder
+    private class ViewHolder{
+        ImageView image;
+        TextView name, description;
+    }
+
     // Return 1 record in Data
+    // position: Vị trí của View
+    // convertView: Item View trong List View
+    // parent: ListView
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
-        // Xác định context nào để Nạp Layout
-        LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-        // Nạp layout
-        convertView = inflater.inflate(layout, null);
+        // Mỗi khi trượt list lên thì sẽ sinh thêm View ở trong list hiện tại
+        // Mỗi khi trượt list xuống thì sẽ load lại View cũ
 
-        // Mapping data to UI
-        TextView txtFruitName = (TextView) convertView.findViewById(R.id.textView_FruitName);
-        TextView txtFruitDescription = (TextView) convertView.findViewById(R.id.textView_FruitDescription);
-        ImageView imgFruitImage = (ImageView) convertView.findViewById(R.id.imageView_FruitImage);
+        // Sử dụng ViewHolder để get lại value của View cũ và show lên chứ không generate mới tốn tài nguyên
+        ViewHolder viewHolder;
+
+        if(convertView == null){
+            // Xác định context nào để Nạp Layout
+            LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+            // Nạp layout
+            convertView = inflater.inflate(layout, null);
+
+            viewHolder = new ViewHolder();
+
+            // Mapping data to UI
+            viewHolder.name = (TextView) convertView.findViewById(R.id.textView_FruitName);
+            viewHolder.description = (TextView) convertView.findViewById(R.id.textView_FruitDescription);
+            viewHolder.image = (ImageView) convertView.findViewById(R.id.imageView_FruitImage);
+
+            convertView.setTag(viewHolder);
+        }
+        else {
+            viewHolder = (ViewHolder) convertView.getTag();
+        }
 
         // Get data item
         Fruit fruit = fruits.get(position);
 
         // Set data item
-        txtFruitName.setText(fruit.getName());
-        txtFruitDescription.setText(fruit.getDescription());
-        imgFruitImage.setImageResource(fruit.getImage());
+        viewHolder.name.setText(fruit.getName());
+        viewHolder.description.setText(fruit.getDescription());
+        viewHolder.image.setImageResource(fruit.getImage());
 
         return convertView;
     }
