@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">WorldApp</string>
+    <string name="text_Title">Phiếu thông tin</string>
+    <string name="hint_FullName">Nhập họ tên</string>
+    <string name="hint_Email">Nhập email</string>
+    <string name="hint_Phone">Nhập số điện thoại</string>
+    <string name="btn_Confirm">Xác nhận</string>
+    <string name="txt_FullName">Họ và tên</string>
+    <string name="txt_PhoneNumber">Số điện thoại</string>
+</resources>

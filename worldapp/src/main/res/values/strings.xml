@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">WorldApp</string>
+    <string name="text_Title">Information form</string>
+    <string name="hint_FullName">Input full name</string>
+    <string name="hint_Email">Input email</string>
+    <string name="hint_Phone">Input Phone number</string>
+    <string name="btn_Confirm">Confirm</string>
+    <string name="txt_FullName">Full name</string>
+    <string name="txt_Email" translatable="false">Email</string>
+    <string name="txt_PhoneNumber">Phone number</string>
+</resources>

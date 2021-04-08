@@ -13,7 +13,17 @@
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/app" />
             <option value="$PROJECT_DIR$/app1" />
+            <option value="$PROJECT_DIR$/datetime" />
+            <option value="$PROJECT_DIR$/dialog" />
+            <option value="$PROJECT_DIR$/drawable" />
+            <option value="$PROJECT_DIR$/explicit" />
+            <option value="$PROJECT_DIR$/gridview" />
+            <option value="$PROJECT_DIR$/implicit" />
+            <option value="$PROJECT_DIR$/intent_application" />
+            <option value="$PROJECT_DIR$/menu" />
             <option value="$PROJECT_DIR$/oop" />
+            <option value="$PROJECT_DIR$/share_preferences" />
+            <option value="$PROJECT_DIR$/worldapp" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />
