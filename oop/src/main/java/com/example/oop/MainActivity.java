@@ -43,6 +43,22 @@ public class MainActivity extends AppCompatActivity {
         arrayFruit.add(new Fruit("Peach", "Peach (Description)", R.drawable.peach_fruit));
         arrayFruit.add(new Fruit("Raspberry", "Raspberry (Description)", R.drawable.raspberry_fruit));
         arrayFruit.add(new Fruit("Watermelon", "Watermelon (Description)", R.drawable.watermelon_fruit));
+
+        arrayFruit.add(new Fruit("Banana", "Banana (Description)", R.drawable.banana_fruit));
+        arrayFruit.add(new Fruit("Beet", "Beet (Description)", R.drawable.beet_fruit));
+        arrayFruit.add(new Fruit("Citrus", "Citrus (Description)", R.drawable.citrus_fruit));
+        arrayFruit.add(new Fruit("Kiwi", "Kiwi (Description)", R.drawable.kiwi_fruit));
+        arrayFruit.add(new Fruit("Peach", "Peach (Description)", R.drawable.peach_fruit));
+        arrayFruit.add(new Fruit("Raspberry", "Raspberry (Description)", R.drawable.raspberry_fruit));
+        arrayFruit.add(new Fruit("Watermelon", "Watermelon (Description)", R.drawable.watermelon_fruit));
+
+        arrayFruit.add(new Fruit("Banana", "Banana (Description)", R.drawable.banana_fruit));
+        arrayFruit.add(new Fruit("Beet", "Beet (Description)", R.drawable.beet_fruit));
+        arrayFruit.add(new Fruit("Citrus", "Citrus (Description)", R.drawable.citrus_fruit));
+        arrayFruit.add(new Fruit("Kiwi", "Kiwi (Description)", R.drawable.kiwi_fruit));
+        arrayFruit.add(new Fruit("Peach", "Peach (Description)", R.drawable.peach_fruit));
+        arrayFruit.add(new Fruit("Raspberry", "Raspberry (Description)", R.drawable.raspberry_fruit));
+        arrayFruit.add(new Fruit("Watermelon", "Watermelon (Description)", R.drawable.watermelon_fruit));
     }
 
     public void LoadDataToUI(){

@@ -4,6 +4,8 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -74,6 +76,10 @@ public class FruitApdapter extends BaseAdapter {
         viewHolder.name.setText(fruit.getName());
         viewHolder.description.setText(fruit.getDescription());
         viewHolder.image.setImageResource(fruit.getImage());
+
+        // Setting animation khi load 1 View Item
+        Animation animationScale = AnimationUtils.loadAnimation(context, R.anim.anim_load_listview_item);
+        convertView.startAnimation(animationScale);
 
         return convertView;
     }
