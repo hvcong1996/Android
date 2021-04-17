@@ -1,3 +1,6 @@
+include ':xml'
+include ':json'
+include ':webview'
 include ':asynctask'
 include ':animation'
 include ':share_preferences'
