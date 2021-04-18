@@ -1,3 +1,6 @@
+include ':media_mp3'
+include ':media'
+include ':volley'
 include ':xml'
 include ':json'
 include ':webview'
