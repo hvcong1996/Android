@@ -4,8 +4,12 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.media.MediaPlayer;
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.SeekBar;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -26,6 +30,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     int songPosition = 0;
 
     MediaPlayer mediaPlayer;
+
+    ImageView imgViewDisc;
+    Animation animation;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -80,6 +87,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         txtTimeSongTotal = (TextView) findViewById(R.id.textViewTimeSongTotal);
 
         sbSong = (SeekBar) findViewById(R.id.seekBarSong);
+
+        imgViewDisc = (ImageView) findViewById(R.id.imageViewDisc);
     }
 
     private void InitSong(){
@@ -90,6 +99,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         songArrayList.add(new Song("Lạc đường", R.raw.lac_duong));
         songArrayList.add(new Song("Người ấy", R.raw.nguoi_ay));
         songArrayList.add(new Song("Từ khi gặp em", R.raw.tu_khi_gap_em));
+
+        animation = AnimationUtils.loadAnimation(MainActivity.this, R.anim.disc_rotate);
     }
 
     private void InitMediaPlayer(){
@@ -111,6 +122,56 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         // Setting để giá trị maximum của seekBar match với giá trị thời gian của media player(mediaPlayer.getDuration())
         sbSong.setMax(mediaPlayer.getDuration());
+    }
+
+    private void UpdateTimeSong(){
+        Handler handler = new Handler();
+        // postDelayed(Runnable: Xử lý execute, thời gian(milis) delay đến khi execute)
+        handler.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                // Format time data mm:ss
+                SimpleDateFormat simpleDateFormat = new SimpleDateFormat("mm:ss");
+
+                // Set time for time loading
+                // mediaPlayer.getCurrentPosition(): Lấy vị trí phát hiện tại của media
+                txtTimeSongLoading.setText(simpleDateFormat.format(mediaPlayer.getCurrentPosition()));
+
+                // Set progess for seekbar
+                // mediaPlayer.getCurrentPosition(): Lấy vị trí phát hiện tại của media
+                sbSong.setProgress(mediaPlayer.getCurrentPosition());
+
+                // If song completed -> next song
+                mediaPlayer.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                    @Override
+                    public void onCompletion(MediaPlayer mp) {
+                        // Tăng position lên
+                        songPosition ++;
+                        // Check to reset positon
+                        if(songPosition > songArrayList.size() - 1){
+                            songPosition = 0;
+                        }
+
+                        // If media Playing then stop it
+                        if(mediaPlayer.isPlaying()){
+                            mediaPlayer.stop();
+                        }
+
+                        // Init Media Player
+                        InitMediaPlayer();
+
+                        // Start media Player with the positon reseted
+                        mediaPlayer.start();
+
+                        // Set text play song is PAUSE
+                        btnPlaySong.setText("PAUSE");
+                    }
+                });
+
+                // Đệ quy lại xử lý của handler
+                handler.postDelayed(this, 500);
+            }
+        }, 100);
     }
 
     @Override
@@ -138,6 +199,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 // Set text play song is PAUSE
                 btnPlaySong.setText("PAUSE");
 
+                imgViewDisc.startAnimation(animation);
                 break;
             case R.id.buttonPlaySong:
                 // Check media is playing
@@ -154,11 +216,15 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     btnPlaySong.setText("PAUSE");
                 }
 
+                // Update time song
+                UpdateTimeSong();
+
+                imgViewDisc.startAnimation(animation);
                 break;
             case R.id.buttonPreviousSong:
                 songPosition --;
                 // Check to reset positon
-                if(songPosition == 0){
+                if(songPosition < 0){
                     songPosition = songArrayList.size() - 1;
                 }
 
@@ -176,12 +242,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 // Set text play song is PAUSE
                 btnPlaySong.setText("PAUSE");
 
+                imgViewDisc.startAnimation(animation);
                 break;
             case R.id.buttonStopSong:
 
                 mediaPlayer.stop();
                 // Release the mediaPlayer
-                mediaPlayer.release();
+                // mediaPlayer.release();
 
                 // Update text play
                 btnPlaySong.setText("PLAY");
