@@ -1,3 +1,5 @@
+include ':sql_lite'
+include ':media_mp3_online'
 include ':media_mp3'
 include ':media'
 include ':volley'

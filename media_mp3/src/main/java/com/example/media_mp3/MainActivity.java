@@ -250,6 +250,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 // Release the mediaPlayer
                 // mediaPlayer.release();
 
+                imgViewDisc.clearAnimation();
+
                 // Update text play
                 btnPlaySong.setText("PLAY");
 
