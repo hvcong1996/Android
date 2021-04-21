@@ -19,6 +19,8 @@
             <option value="$PROJECT_DIR$/dialog" />
             <option value="$PROJECT_DIR$/drawable" />
             <option value="$PROJECT_DIR$/explicit" />
+            <option value="$PROJECT_DIR$/fragment" />
+            <option value="$PROJECT_DIR$/fragment_send_data" />
             <option value="$PROJECT_DIR$/gridview" />
             <option value="$PROJECT_DIR$/implicit" />
             <option value="$PROJECT_DIR$/intent_application" />
@@ -30,7 +32,9 @@
             <option value="$PROJECT_DIR$/oop" />
             <option value="$PROJECT_DIR$/share_preferences" />
             <option value="$PROJECT_DIR$/sql_lite" />
+            <option value="$PROJECT_DIR$/sql_lite_image" />
             <option value="$PROJECT_DIR$/volley" />
+            <option value="$PROJECT_DIR$/web_service" />
             <option value="$PROJECT_DIR$/webview" />
             <option value="$PROJECT_DIR$/worldapp" />
             <option value="$PROJECT_DIR$/xml" />

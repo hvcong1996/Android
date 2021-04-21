@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="10dp" >
+
+    <TextView
+        android:id="@+id/textViewAddJobTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="30dp"
+        android:textStyle="bold"
+        android:textColor="#000000"
+        android:gravity="center"
+        android:text="New job" />
+
+    <EditText
+        android:id="@+id/editTextJobName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textViewAddJobTitle"
+        android:layout_marginTop="20dp"
+        android:hint="Input job name" />
+
+    <Button
+        android:id="@+id/buttonAddJob"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/editTextJobName"
+        android:layout_marginTop="40dp"
+        android:layout_marginLeft="30dp"
+        android:text="Add Job" />
+
+    <Button
+        android:id="@+id/buttonCancelAddJob"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/editTextJobName"
+        android:layout_marginTop="40dp"
+        android:layout_toRightOf="@+id/buttonAddJob"
+        android:layout_marginLeft="30dp"
+        android:text="Cancel" />
+
+</RelativeLayout>

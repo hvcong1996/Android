@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#4CAF50"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/textViewFragmentATitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Fragment A"
+        android:textColor="#f000"
+        android:textSize="30sp" />
+
+    <EditText
+        android:id="@+id/editTextInputNameA"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="Input Name A"
+        android:inputType="textPersonName" />
+
+    <Button
+        android:id="@+id/buttonFragASetToMainActivity"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Set to MainActivity" />
+
+    <Button
+        android:id="@+id/buttonFragASetToFragB"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Set to Fragment B" />
+</LinearLayout>

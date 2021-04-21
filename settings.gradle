@@ -1,3 +1,7 @@
+include ':fragment_send_data'
+include ':fragment'
+include ':web_service'
+include ':sql_lite_image'
 include ':sql_lite'
 include ':media_mp3_online'
 include ':media_mp3'
