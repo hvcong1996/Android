@@ -34,15 +34,20 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         // Create fragment Transaction
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
 
-
         switch (v.getId()){
             case R.id.buttonAddFragA:
+                // Send data(Bundle object) to Fragment using setArguments
+                FragmentA fragmentA = new FragmentA();
+                Bundle bundle = new Bundle();
+                // bundle.putString([key],[value])
+                bundle.putString("FullName", "Huỳnh Văn Công");
+                bundle.putInt("FullName", 1);
+                fragmentA.setArguments(bundle);
+
                 // Trường hợp không sử dụng framelayout để load fragment lên thì sử dụng mainlayout cũng được
-                fragmentTransaction.add(R.id.MainLinearLayout, new FragmentA());
+                fragmentTransaction.add(R.id.mainLinearLayout, fragmentA);
                 break;
         }
-
-        Toast.makeText(MainActivity.this, "message", Toast.LENGTH_SHORT).show();
 
         fragmentTransaction.commit();
     }

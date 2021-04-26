@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:weightSum="10"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <fragment
+        android:id="@+id/fragmentStudentList"
+        android:name="com.example.fragment_baitap.FragmentStudentList"
+        android:layout_weight="3.5"
+        android:layout_width="0dp"
+        android:layout_height="match_parent" />
+
+    <fragment
+        android:id="@+id/fragmentStudentDetail"
+        android:name="com.example.fragment_baitap.FragmentStudentDetail"
+        android:layout_weight="6.5"
+        android:layout_width="0dp"
+        android:layout_height="match_parent" />
+</LinearLayout>

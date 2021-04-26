@@ -20,6 +20,10 @@
             <option value="$PROJECT_DIR$/drawable" />
             <option value="$PROJECT_DIR$/explicit" />
             <option value="$PROJECT_DIR$/fragment" />
+            <option value="$PROJECT_DIR$/fragment_baitap" />
+            <option value="$PROJECT_DIR$/fragment_dialog" />
+            <option value="$PROJECT_DIR$/fragment_list" />
+            <option value="$PROJECT_DIR$/fragment_remove_pop_back_stack" />
             <option value="$PROJECT_DIR$/fragment_send_data" />
             <option value="$PROJECT_DIR$/gridview" />
             <option value="$PROJECT_DIR$/implicit" />
@@ -38,6 +42,7 @@
             <option value="$PROJECT_DIR$/webview" />
             <option value="$PROJECT_DIR$/worldapp" />
             <option value="$PROJECT_DIR$/xml" />
+            <option value="$PROJECT_DIR$/youtube_api" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />

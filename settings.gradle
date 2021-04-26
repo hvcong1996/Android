@@ -1,3 +1,8 @@
+include ':youtube_api'
+include ':fragment_baitap'
+include ':fragment_dialog'
+include ':fragment_list'
+include ':fragment_remove_pop_back_stack'
 include ':fragment_send_data'
 include ':fragment'
 include ':web_service'
